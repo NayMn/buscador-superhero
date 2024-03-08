@@ -1,0 +1,29 @@
+body {
+    font-family: cursive;
+}
+
+nav {
+    background-color: rgb(35, 35, 35);
+    display: flex;
+    margin-bottom: 50px;
+}
+
+
+.containerImg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.img {
+    display: block;
+    margin: 100px, auto;
+
+}
+
+
+.cardCss {
+    font-size: x-small;
+    border: none;
+
+}
