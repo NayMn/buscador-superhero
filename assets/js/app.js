@@ -1,7 +1,7 @@
-// cargar dom
+
 $(document).ready(function () {
 
-    //capturar elementos 
+
     const formulario = $("#formulario")
     const inputform = $("#inputFormulario")
     const entregaSuperHero = $("#entregaSuperHero")
@@ -10,25 +10,25 @@ $(document).ready(function () {
 
 
 
-    // evento submit en el formulario:
+
     formulario.on("submit", function (stopActualizacion) {
         stopActualizacion.preventDefault()
         console.log("diste submit")
 
-        //ingresado por el usuario sean solo numeros
+
         const inputUser = parseInt(inputform.val().trim())
         console.log(inputUser)
 
 
-        // si lo que ingreso user es mayo a 0:
+
         if (inputUser > 0) {
             console.log("Es correcta la busqueda")
-            inputform.addClass("is-valid") //para validar si la info es correcta
+            inputform.addClass("is-valid")
             inputform.removeClass("is-invalid")
-            getNumero(inputUser) //cuando es correcto pide info a la api
+            getNumero(inputUser)
         } else {
             console.log("No es correcto")
-            inputform.addClass("is-invalid") // validar info incorrecta
+            inputform.addClass("is-invalid")
             inputform.removeClass("is-valid")
         }
 
@@ -43,7 +43,7 @@ $(document).ready(function () {
             url: `https://www.superheroapi.com/api.php/10231403815334635/${numeroApi}`,
             method: "GET",
 
-            success(infoApi) { //info del objeto que vamos a mostrar
+            success(infoApi) {
                 console.log(infoApi);
 
 
@@ -55,9 +55,9 @@ $(document).ready(function () {
                     publisher: infoApi.biography.publisher,
                     occupation: infoApi.work.occupation,
                     firstAppearance: infoApi.biography["first-appearance"],
-                    height: infoApi.appearance.height.join(" "), //array
-                    weight: infoApi.appearance.weight.join(" "), //array
-                    aliases: infoApi.biography.aliases.join(" "), //array
+                    height: infoApi.appearance.height.join(" "),
+                    weight: infoApi.appearance.weight.join(" "),
+                    aliases: infoApi.biography.aliases.join(" "),
                     combat: infoApi.powerstats.combat,
                     durability: infoApi.powerstats.durability,
                     intelligence: infoApi.powerstats.intelligence,
@@ -94,7 +94,7 @@ $(document).ready(function () {
                 `)
 
 
-                // grafiquito!!!
+
 
                 const options = {
 
